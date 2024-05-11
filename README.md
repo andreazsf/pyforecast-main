@@ -17,12 +17,12 @@ npm install
 
 ## Install the dependencies for backend
 ```bash
-For Python:
+# For Python:
 pip install numpy 1.26.2
 pip install scikit-learn 1.3.2 
 pip install requests pymongo
 
-For Node.js:
+# For Node.js:
 npm install node express mongoose cors bcryptjs jsonwebtoken dotenv
 ```
 
@@ -33,7 +33,7 @@ quasar dev
 
 ### Start the backend app
 ```bash
-In src/server directory, run: 
+# In src/server directory, run: 
 node server.js
 ```
 
