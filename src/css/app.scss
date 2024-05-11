@@ -1,0 +1,1354 @@
+// app global css in SCSS form
+
+@import "./my.colors";
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.text-16 {
+  font-size: 16px;
+}
+
+.text-22 {
+  font-size: 22px;
+}
+
+.text-32 {
+  font-size: 32px;
+}
+
+.input-type {
+  border: 1px solid rgba(102, 102, 102, 35%);
+  border-radius: 12px !important;
+  font-size: 16px !important;
+
+  .q-field__native span {
+    margin-top: -16px !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.input-type-rounded {
+  border: 1px solid transparent;
+  border-radius: 12px !important;
+}
+
+.rounded-borders-10 {
+  border: 1px solid transparent;
+  border-radius: 10px !important;
+}
+
+.rounded-borders {
+  border: 1px solid transparent;
+  border-radius: 12px !important;
+}
+
+.rounded-borders-16 {
+  border: 1px solid transparent;
+  border-radius: 16px !important;
+}
+
+.line-height-default {
+  line-height: 0.1 !important;
+}
+
+.btn-default {
+  border-radius: 12px !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit !important;
+}
+
+.my-card {
+  min-width: 200px;
+  min-height: 112px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+/*
+* Header Styles
+*/
+
+.my-header-content {
+  top: 0;
+  bottom: 0;
+  &.left-right-30 {
+    left: 30px;
+    right: 30px;
+  }
+  &.left-right-24 {
+    left: 24px;
+    right: 24px;
+  }
+  .header-title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+// Links or Clickable lists
+
+.my-active-link {
+  color: $primary !important;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px !important;
+}
+
+.my-link:hover {
+  // text-decoration: underline;
+  // text-underline-offset: 8px !important;
+  // text-decoration-thickness: 2px;
+  border-radius: 12px !important;
+
+  // .q-focus-helper {
+  //   background-color: transparent !important;
+  //   color: $primary !important;
+  // }
+
+  // .q-hoverable {
+  //   color: $primary !important;
+  // }
+}
+
+// .my-list:hover {
+//   // text-decoration: underline;
+//   // text-underline-offset: 8px !important;
+//   // text-decoration-thickness: 2px;
+
+//   // .q-focus-helper {
+//   //   background-color: transparent !important;
+//   //   color: $primary !important;
+//   // }
+
+//   // .q-hoverable {
+//   //   color: $primary !important;
+//   // }
+// }
+
+.my-active-list {
+  border-left: 3px solid $primary;
+  .q-item__label,
+  i {
+    color: $primary !important;
+  }
+}
+
+/*
+* Table.vue Styles
+*/
+
+.my-dark-mode {
+  .my-table {
+    tbody tr td {
+      color: $primary;
+    }
+    //FOR EVEN TABLE ROWS
+    tr:nth-child(even) {
+      background-color: $primary;
+    }
+    //FOR ODD TABLE ROWS
+    tr:nth-child(odd) {
+      background-color: $secondary;
+    }
+  }
+}
+
+table {
+  // border-collapse: separate !important; /* allow spacing between cell borders */
+  // border-spacing: 0 8px !important; /* <horizontal value> <vertical value> */
+  border-collapse: separate !important;
+  // table-layout: fixed !important;
+  border-spacing: 0 16px !important; /* this is the ultimate fix */
+  background-color: $accent-0;
+}
+
+table tr td,
+table tr th {
+  border-bottom: 1px solid $accent-1 !important;
+  border-top: 1px solid $accent-1 !important;
+}
+
+table tr td:first-child,
+table tr th:first-child {
+  border-left: 1px solid $accent-1 !important;
+  border-radius: 12px 0 0 12px;
+}
+
+table tr td:last-child,
+table tr th:last-child {
+  border-right: 1px solid $accent-1 !important;
+  border-radius: 0 12px 12px 0;
+}
+
+.my-table {
+  @media screen and (max-width: $breakpoint-md-min) {
+    // 768
+    max-width: calc(100vw - 133px);
+  }
+
+  // FOR THEAD
+  .q-table__top,
+  thead tr:first-child th {
+    color: $black;
+    background-color: $accent-3;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 1em 0 1em;
+  }
+  // FOR TBODY
+  tbody tr td {
+    // text-align: left;
+    font-weight: 600;
+    font-size: 16px;
+    color: $black;
+    white-space: normal;
+    padding: 1em 0 1em;
+    // text-overflow: ellipsis !important;
+    // overflow: hidden !important;
+    // min-width: 8%;
+
+    //FOR KNOB ICON BUTTON
+    button {
+      border: none;
+      background: none;
+      color: #8890a3;
+      cursor: pointer;
+    }
+    //For Button Hover with perfect circle
+    button:hover {
+      background: #ecf2f4;
+      height: 35px;
+      width: 35px;
+      border-radius: 100%;
+    }
+  }
+
+  thead {
+    .q-checkbox {
+      .q-checkbox__inner {
+        color: $primary !important;
+      }
+    }
+  }
+
+  tbody {
+    .q-checkbox {
+      .q-checkbox__inner {
+        color: $primary !important;
+      }
+    }
+    // border-collapse: separate !important;
+    // border-spacing: 5em !important;
+  }
+  //HIDE THE BOTTOM PART
+  .q-table__bottom {
+    display: none;
+  }
+  //FOR EVEN TABLE ROWS
+  tr:nth-child(even) {
+    background-color: $accent-0;
+  }
+  //FOR ODD TABLE ROWS
+  tr:nth-child(odd) {
+    background-color: $accent-0;
+  }
+
+  &.max-width {
+    th,
+    td,
+    .td {
+      max-width: 222px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  tr {
+    cursor: pointer;
+    // height: 50px;
+    border-radius: 12px !important;
+    .table-menu {
+      width: 30px;
+      .q-btn {
+        transition: 0.3s ease-out;
+        opacity: 0;
+        // display: none;
+        &.active {
+          background-color: red !important;
+        }
+      }
+    }
+    &:hover {
+      .table-menu {
+        .q-btn {
+          opacity: 1;
+          // display: block;
+        }
+      }
+      cursor: default;
+    }
+  }
+
+  tr td {
+    min-width: 120px;
+    // min-width: 8%;
+    max-width: 160px !important;
+    // padding-right: 32px !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b8b8b8;
+  }
+}
+
+/*
+* Main card style
+ */
+.my-dark-mode {
+  .my-main-card {
+    .display {
+      background-color: #2c374e;
+      &:hover {
+        background-color: $secondary;
+      }
+      .menuHover {
+        .menubtn {
+          &:hover {
+            color: $primary !important;
+          }
+        }
+      }
+    }
+  }
+  .my-mobile-card {
+    background-color: #2c374e;
+  }
+}
+.my-main-card {
+  display: inline-grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 10px;
+  @media screen and (max-width: 1023px) {
+    display: block;
+  }
+
+  .display {
+    background-color: #f5f5f5;
+    border-color: #707070;
+    border-radius: 15px;
+    transition: 0.2s ease-out;
+    @media screen and (max-width: 1023px) {
+      margin-bottom: 10px;
+    }
+
+    .menuHover {
+      float: right;
+      transition: 0.2s;
+      @media screen and (min-width: 1023px) {
+        visibility: hidden;
+      }
+
+      .menubtn:hover {
+        background-color: #c4c0c0;
+      }
+    }
+
+    .separators {
+      opacity: 0.3;
+    }
+
+    .details {
+      .heading {
+        max-width: 180px;
+        @media screen and (min-width: $breakpoint-lg-max) {
+          //1919
+          max-width: 300px;
+        }
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        @media screen and (max-width: 600px) {
+          max-width: 250px;
+        }
+        h4 {
+          width: 20px;
+          display: inline;
+          font-size: 20px;
+          font-weight: 510;
+          @media screen and (max-width: 600px) {
+            font-size: 15px;
+          }
+        }
+      }
+
+      .overall_progress {
+        width: 100%;
+        border-radius: 5px;
+        @media screen and (max-width: 600px) {
+          margin: 10px 0;
+        }
+      }
+
+      .progress_percent {
+        opacity: 0.7;
+        font-size: 16px;
+      }
+
+      span {
+        @media screen and (max-width: 600px) {
+          font-size: 11px !important;
+        }
+      }
+
+      .bottom_details div {
+        display: inline-block;
+
+        .m_value {
+          color: red;
+          font-weight: 600;
+        }
+      }
+
+      #right_side {
+        float: right;
+
+        .dl_value {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .display:hover {
+    cursor: pointer;
+    background: #e9e8e8;
+
+    .menuHover {
+      visibility: visible;
+    }
+  }
+}
+
+.my-dark-mode {
+  .my-select-field {
+    .q-field__label,
+    .q-field__input,
+    .q-field__native {
+      color: $white;
+    }
+  }
+}
+
+// Pm select field
+.my-select-field {
+  min-width: 150px;
+  background-color: white !important;
+  border: 1px solid $black !important;
+  border-radius: 15px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  .q-field__label {
+    margin-left: 15px;
+    color: $placeholder;
+    transform: none !important;
+  }
+  .q-field__control-container {
+    padding-top: 0 !important;
+  }
+  span {
+    margin-left: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .q-select__dropdown-icon {
+    margin-right: 10px;
+    color: $black;
+    // padding: 0 10px;
+    // border-radius: 15px;
+    // background-color: $white;
+  }
+  &.height-31 {
+    height: 31px;
+  }
+  &.height-34 {
+    height: 34px;
+  }
+  &.height-31,
+  &.height-34 {
+    .q-field__marginal,
+    .q-field__control,
+    .q-field__native {
+      height: 31px;
+      min-height: 31px;
+      padding: 0;
+    }
+    .q-field__label {
+      top: 5px;
+    }
+  }
+  &.standard_q-chip {
+    .q-field__native {
+      .q-chip {
+        background: $primary;
+        color: $primary;
+        height: 31px;
+        .q-chip__icon {
+          color: $primary;
+        }
+      }
+    }
+  }
+  &.height-34 {
+    height: 34px;
+    .q-field__marginal,
+    .q-field__control,
+    .q-field__native {
+      height: 34px;
+      min-height: 34px;
+    }
+    .q-field__label {
+      top: 5px;
+    }
+  }
+  &.min-width-90 {
+    min-width: 90px;
+    .q-field__label,
+    span {
+      padding-left: 20px;
+    }
+    .q-field__append {
+      padding-left: 0;
+    }
+  }
+  &.use-input {
+    .q-field__input {
+      padding-left: 15px;
+    }
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  .q-field__bottom {
+    min-height: auto;
+    padding: 0;
+  }
+
+  &.standard {
+    @media screen and (min-width: $breakpoint-sm-min) {
+      // 768
+      width: 300px;
+    }
+
+    @media screen and (min-width: $breakpoint-sm-max) {
+      // 1023
+      width: 292px;
+    }
+
+    @media screen and (min-width: $breakpoint-lg-max) {
+      // 1919
+      width: 318px;
+    }
+  }
+}
+
+.q-select__dialog {
+  @media screen and (max-width: $breakpoint-xs-max) {
+    background: transparent;
+    .q-field__inner {
+      display: none;
+    }
+  }
+}
+
+.my-option-style-dark,
+.my-option-style-light {
+  border-radius: 10px;
+  // border: 1px solid $black;
+  border: none !important;
+  max-height: 60vh;
+
+  .q-item--active {
+    // color: inherit;
+    background-color: $primary;
+    color: $white;
+  }
+
+  @media screen and (max-width: $breakpoint-sm-min) {
+    width: calc(100% - 24px);
+    position: fixed !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media screen and (min-width: $breakpoint-sm-min) {
+    margin-top: 10px !important;
+  }
+
+  .q-item {
+    min-height: 35px;
+  }
+
+  &.max-width-130 {
+    max-width: 130px;
+    @media screen and (min-width: $breakpoint-lg-max) {
+      max-width: 190px;
+    }
+  }
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #b8b8b8;
+    border-radius: 10px;
+  }
+}
+
+.my-option-style-dark {
+  background-color: $primary !important;
+  color: $white;
+  .q-field__native {
+    color: $white !important;
+  }
+}
+
+.my-option-style-light {
+  background-color: $white !important;
+  color: $black;
+  .q-field__native {
+    color: $placeholder;
+  }
+}
+
+.my-selected-class {
+  color: $white !important;
+  background-color: $primary;
+}
+
+.my-dark-mode {
+  .my-input-field {
+    .q-field__native {
+      color: $white !important;
+    }
+  }
+}
+
+// Pm input field
+.my-input-field {
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: white !important;
+  border: 1px solid $black !important;
+  border-radius: 15px;
+  &.label-primary {
+    .q-field__label {
+      color: $black;
+    }
+    .q-field__native {
+      color: $black;
+    }
+  }
+  .q-field__native {
+    color: $placeholder;
+    cursor: pointer !important;
+  }
+  .q-field__label {
+    color: white;
+    transform: none !important;
+    font-size: 10px;
+    @media screen and (min-width: $breakpoint-lg-max) {
+      // 1919
+      font-size: 14px;
+    }
+    @media screen and (min-width: $breakpoint-xl-max) {
+      // 5120
+      font-size: 18px;
+    }
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  .q-field__control {
+    padding: 0 15px 15px;
+  }
+  &.autogrow {
+    min-height: 150px;
+    .q-field__control {
+      padding: 0 !important;
+    }
+  }
+  &.textarea {
+    padding-left: 14px;
+    padding-right: 14px;
+    .q-field__control {
+      padding-left: 0;
+    }
+  }
+
+  &.height-31 {
+    height: 31px;
+  }
+  &.height-34 {
+    height: 34px;
+  }
+
+  &.height-31,
+  &.height-34 {
+    .q-field__marginal,
+    .q-field__control,
+    .q-field__native {
+      height: 31px;
+      min-height: 31px;
+      padding: 0;
+    }
+    .q-field__label {
+      top: 5px;
+    }
+  }
+
+  &.max-width-300 {
+    max-width: 300px;
+    @media screen and (min-width: $breakpoint-sm-min) {
+      // 768
+      max-width: 360px;
+    }
+  }
+
+  &.standard {
+    @media screen and (min-width: $breakpoint-sm-min) {
+      // 768
+      width: 300px;
+    }
+
+    @media screen and (min-width: $breakpoint-sm-max) {
+      // 1023
+      width: 292px;
+    }
+
+    @media screen and (min-width: $breakpoint-lg-max) {
+      // 1919
+      width: 318px;
+    }
+  }
+
+  .q-field__bottom {
+    min-height: auto;
+    padding: 0;
+  }
+
+  &.dialog-input {
+    ::placeholder {
+      opacity: 1;
+      color: #727272;
+    }
+
+    .q-field__input {
+      color: #fff !important;
+    }
+
+    .q-field__native {
+      color: white;
+    }
+
+    color: white !important;
+    border: solid 1px white;
+    width: 100%;
+    position: relative;
+    .q-field__bottom {
+      min-height: 0;
+      padding: 0;
+    }
+  }
+}
+
+// Pm input field
+.my-pagination-controls {
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+  color: $black !important;
+  &.label-primary {
+    .q-field__label {
+      color: $black;
+    }
+    .q-field__native {
+      color: $black;
+    }
+  }
+  .q-field__native {
+    color: $black;
+  }
+  .q-field__label {
+    color: white;
+    transform: none !important;
+    font-size: 12px;
+    @media screen and (min-width: $breakpoint-lg-max) {
+      // 1919
+      font-size: 14px;
+    }
+    @media screen and (min-width: $breakpoint-xl-max) {
+      // 5120
+      font-size: 18px;
+    }
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  .q-field__control {
+    padding: 0 15px 15px;
+  }
+  &.autogrow {
+    min-height: 150px;
+    .q-field__control {
+      padding: 0 !important;
+    }
+  }
+  &.textarea {
+    padding-left: 14px;
+    padding-right: 14px;
+    .q-field__control {
+      padding-left: 0;
+    }
+  }
+
+  &.height-31 {
+    height: 31px;
+  }
+  &.height-34 {
+    height: 34px;
+  }
+
+  &.height-31,
+  &.height-34 {
+    .q-field__marginal,
+    .q-field__control,
+    .q-field__native {
+      height: 31px;
+      min-height: 31px;
+      padding: 0;
+    }
+    .q-field__label {
+      top: 5px;
+    }
+  }
+
+  &.max-width-300 {
+    max-width: 300px;
+    @media screen and (min-width: $breakpoint-sm-min) {
+      // 768
+      max-width: 360px;
+    }
+  }
+
+  &.standard {
+    @media screen and (min-width: $breakpoint-sm-min) {
+      // 768
+      width: 300px;
+    }
+
+    @media screen and (min-width: $breakpoint-sm-max) {
+      // 1023
+      width: 292px;
+    }
+
+    @media screen and (min-width: $breakpoint-lg-max) {
+      // 1919
+      width: 318px;
+    }
+  }
+
+  .q-field__bottom {
+    min-height: auto;
+    padding: 0;
+  }
+
+  &.dialog-input {
+    ::placeholder {
+      opacity: 1;
+      color: $black;
+    }
+
+    .q-field__input {
+      color: #fff !important;
+    }
+
+    .q-field__native {
+      color: white;
+    }
+
+    color: white !important;
+    border: solid 1px white;
+    width: 100%;
+    position: relative;
+    .q-field__bottom {
+      min-height: 0;
+      padding: 0;
+    }
+  }
+}
+
+.my-button {
+  border-radius: 10px;
+  width: 100%;
+  @media screen and (min-width: $breakpoint-sm-min) {
+    // 768
+    border-radius: 50px;
+    width: auto;
+  }
+}
+
+/*
+* Main scroll
+*/
+.my-main-scroll {
+  padding: 0 24px 0 24px;
+  @media screen and (min-width: $breakpoint-sm-min) {
+    overflow-y: scroll;
+    &.standard-scroll {
+      height: calc(100vh - 195px);
+    }
+    &.table-scroll {
+      height: calc(100vh - 240px);
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-sm-max) {
+    /* width */
+    &::-webkit-scrollbar {
+      width: 3px;
+      height: 3px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #b8b8b8;
+      border-radius: 10px;
+    }
+  }
+
+  // Applied for mobile screen size
+  @media only screen and (max-width: 767px) {
+    &.no-padding-left-right-lg {
+      padding: 0 !important;
+    }
+    &.padding-top-bottom-lg {
+      padding-top: 24px !important;
+      padding-bottom: 24px !important;
+    }
+    &.padding-bottom-lg {
+      padding-bottom: 24px !important;
+    }
+  }
+}
+
+/*
+* Pagination Style
+*/
+.my-pagination-container {
+  position: relative;
+  width: 112px;
+  height: 31px;
+  border: 1px solid $black;
+  // overflow-x: scroll;
+  border-radius: 19px;
+
+  @media screen and (max-width: 375px) {
+    width: 88px;
+  }
+
+  .pagination {
+    button:first-of-type {
+      position: absolute;
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 1px solid $black;
+      border-radius: 100%;
+    }
+    button:last-of-type {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 1px solid $black;
+      border-radius: 100%;
+    }
+    button:last-of-type,
+    button:first-of-type {
+      // width: 16px;
+      width: 16px;
+      height: 16px;
+
+      .q-btn__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -45%);
+      }
+    }
+
+    .justify-center {
+      button {
+        display: none;
+      }
+    }
+  }
+  .q-pagination__content > .q-btn {
+    margin: 0 !important;
+  }
+  .my-pagination-select-input {
+    width: 70px;
+    height: 31px;
+    // overflow-x: scroll;
+
+    .q-field__control {
+      font-size: 12px;
+      color: $black;
+      padding: 0px;
+      min-height: 31px;
+      bottom: 1px;
+
+      @media screen and (max-width: 375px) {
+        font-size: 8px !important;
+      }
+
+      .q-field__native {
+        justify-content: center;
+        align-items: center;
+        min-height: 31px;
+      }
+      &::before,
+      &::after {
+        border: unset;
+      }
+    }
+    .q-field__append {
+      display: none;
+    }
+  }
+}
+
+.my-dark-mode {
+  .my-menu-scroll {
+    .q-expansion-item--expanded {
+      .q-item--clickable {
+        background-color: #2c374e;
+      }
+    }
+    .q-item__section--side {
+      color: white;
+    }
+    // Router link active
+    .q-item.q-router-link--active {
+      background-color: #2c374e;
+    }
+  }
+}
+
+.my-menu-scroll {
+  .q-expansion-item--expanded {
+    .q-item--clickable {
+      background-color: #f2f2f2;
+      border-left: 2px solid $primary;
+    }
+    .q-item.q-router-link--active {
+      .list-text {
+        color: #a67c00 !important;
+      }
+    }
+    .q-expansion-item__content {
+      .q-item--clickable {
+        background-color: transparent;
+        border-left: 0;
+      }
+    }
+  }
+  .q-item__section--avatar {
+    min-width: 40px;
+  }
+  .q-item__section--side {
+    color: $primary;
+    .q-expansion-item__toggle-icon {
+      font-size: 18px;
+      opacity: 0.7;
+    }
+  }
+  // Router link active
+  .q-item {
+    margin-left: 3px;
+    border-left: 2px solid transparent;
+  }
+  .q-item.q-router-link--active {
+    background-color: #f2f2f2;
+    border-left: 2px solid $primary;
+    color: $primary;
+  }
+  .margin-left-10 {
+    margin-left: 10px;
+  }
+}
+
+// Standard form width
+.standard-form-width {
+  @media screen and (min-width: $breakpoint-sm-min) {
+    // 768
+    width: 300px;
+  }
+
+  @media screen and (min-width: $breakpoint-sm-max) {
+    // 1023
+    width: 292px;
+  }
+
+  @media screen and (min-width: $breakpoint-lg-max) {
+    // 1919
+    width: 318px;
+  }
+}
+
+/*
+* Toggle button style
+*/
+.my-toggle {
+  .q-toggle__inner {
+    border: 1px solid $primary;
+    min-width: 35.66px;
+    height: 21.79px;
+    width: 35.66px;
+    border-radius: 11px;
+    padding: 3.1px 3.4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+  }
+  .q-toggle__track {
+    margin-top: 0;
+    height: 15.56px;
+    width: 100%;
+    margin-left: 0;
+    opacity: 1 !important;
+    background: $primary;
+    border-radius: 11px;
+  }
+  .q-toggle__thumb {
+    height: 13px;
+    width: 13px;
+    top: 50%;
+    margin-top: 0;
+    transform: translateY(-50%);
+    left: 5px;
+    &::after {
+      box-shadow: none;
+      background: $primary;
+    }
+    &::before {
+      opacity: 0 !important;
+    }
+  }
+  .q-toggle__inner--truthy {
+    .q-toggle__thumb {
+      left: 15.7px !important;
+      &::after {
+        background: $primary;
+      }
+    }
+    .q-toggle__track {
+      background: $primary;
+    }
+  }
+  .q-toggle__inner--indet .q-toggle__thumb {
+    left: 5px;
+  }
+
+  .q-toggle__label {
+    padding-left: 20px;
+  }
+}
+
+// Used in mobile forms
+.margin-bottom-sm {
+  @media only screen and (max-width: 767px) {
+    margin-bottom: 50px;
+  }
+}
+
+/**
+  PM dialog
+*/
+.my-dialog-background {
+  // background-image: url('src/resources/assets/my-dialog-background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.7);
+
+  .my-dialog-container {
+    width: 100%;
+    height: 400px;
+    // background-image: url('src/resources/assets/my-dialog-container.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 314px;
+    max-width: 100% !important;
+    @media screen and (max-width: 767px) {
+      background: none;
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 700px;
+      height: 780px;
+      background-size: 700px;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 500px;
+      height: 500px;
+      background-size: 450px;
+    }
+    @media screen and (min-width: 1919px) {
+      width: 800px;
+      height: 800px;
+      background-size: 700px;
+    }
+
+    .text-32 {
+      font-size: 20px;
+      @media screen and (min-width: 768px) {
+        font-size: 32px;
+      }
+      @media screen and (min-width: 1024px) and (max-width: 1919px) {
+        font-size: 25px;
+      }
+    }
+
+    .text-24 {
+      font-size: 13px;
+      @media screen and (min-width: 768px) {
+        font-size: 24px;
+      }
+      @media screen and (min-width: 1024px) and (max-width: 1919px) {
+        font-size: 18px;
+      }
+    }
+    .width-300 {
+      width: 280px;
+      @media screen and (min-width: 768px) {
+        width: 300px;
+      }
+      @media screen and (min-width: 1024px) and (max-width: 1919px) {
+        width: 250px;
+      }
+      .width-auto {
+        width: auto;
+        min-width: 0;
+        display: table;
+      }
+    }
+  }
+}
+
+// For mobile spacings
+@media screen and (max-width: 600px) {
+  .sm-p-none {
+    padding: 0 !important;
+  }
+  .sm-m-none {
+    margin: 0 !important;
+  }
+}
+
+// For q-tabs
+.q-tabs {
+  @media screen and (max-width: 600px) {
+    width: 100vw;
+  }
+}
+
+// Mobile element visibility
+.show-on-mobile {
+  @media screen and (min-width: 600px) {
+    display: none;
+  }
+}
+
+.my-show-all-btn {
+  width: 112px;
+  height: 31px;
+
+  @media screen and (max-width: 375px) {
+    width: 88px;
+    font-size: 11px !important;
+  }
+}
+
+.q-loading__backdrop {
+  background-color: $accent-6 !important;
+}
+
+.q-menu,
+.q-date {
+  border: 1px solid transparent;
+  border-radius: 12px !important;
+}

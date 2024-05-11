@@ -1,0 +1,165 @@
+/**
+  pm Customed Class Names for Background, Text Colors
+
+  NOTE  : Refer to pm.variables.scss for variable references
+  USAGE : eg. my-bg-primary, my-bg-hover-primary, my-text-primary, my-text-hover-primary
+*/
+@import "my.functions";
+
+.my-bg-primary {
+  background-color: $primary !important;
+}
+.my-bg-secondary {
+  background-color: $secondary !important;
+}
+.my-bg-primary {
+  background-color: $primary;
+  @media screen and (min-width: $breakpoint-sm-max) {
+    background-color: $primary !important;
+  }
+}
+.my-text-primary {
+  color: $primary;
+}
+.my-text-secondary {
+  color: $primary;
+}
+
+.my-dark-mode {
+  .my-bg-secondary {
+    background-color: $secondary !important;
+  }
+  .my-bg-primary {
+    background-color: $primary !important;
+  }
+
+  .my-text-primary {
+    color: $white !important;
+  }
+
+  .my-right-drawer {
+    @media screen and (max-width: 1500px) {
+      box-shadow: -5px 0px 20px -8px rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+// HEADER
+.my-header {
+  .my-bg-secondary {
+    @media screen and (max-width: $breakpoint-xs-max) {
+      background-color: $primary !important;
+    }
+  }
+}
+
+//Index Page
+.my-index {
+  .my-text-secondary {
+    color: $primary;
+  }
+}
+
+// LEFT SIDEBAR
+.my-left-drawer {
+  .my-bg-secondary {
+    @media screen and (max-width: 767px) {
+      background-color: $primary !important;
+    }
+  }
+}
+
+// RIGHT SIDEBAR
+.my-right-drawer {
+  .my-bg-primary {
+    background-color: $primary;
+    .my-bg-primary {
+      background-color: $primary;
+    }
+  }
+  .my-analog-clock-primary {
+    filter: drop-shadow(5px 5px 3px #707070) !important;
+  }
+  @media screen and (max-width: 1500px) {
+    box-shadow: -5px 0px 20px -8px #aaaaaa;
+  }
+}
+
+// FOOTER
+.my-footer {
+  .my-bg-primary {
+    background-color: $primary;
+    @media screen and (min-width: $breakpoint-sm-min) {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+  }
+  .my-text-primary {
+    color: $primary;
+  }
+}
+
+// Background accent color
+@for $i from 0 through 7 {
+  .my-bg-accent-#{$i} {
+    background-color: color(a, $i);
+  }
+}
+
+// Background accent hover color
+@for $i from 0 through 7 {
+  .my-bg-hover-accent-#{$i} {
+    transition: 0.2s ease-out;
+    &:hover {
+      color: $white;
+      background-color: color(a, $i) !important;
+    }
+  }
+}
+
+// Text accent colors
+@for $i from 0 through 7 {
+  .my-text-accent-#{$i} {
+    color: color(a, $i);
+  }
+  // Text accent hover colors
+  .my-text-hover-accent-#{$i} {
+    transition: 0.2s ease-out;
+    &:hover {
+      color: color(a, $i) !important;
+    }
+  }
+}
+
+// Notification colors
+.my-warning-notif {
+  background-color: #fffaf3;
+  color: #7a4d05 !important;
+  border: 1px solid #ccbea0;
+}
+.my-info-notif {
+  background-color: #f8ffff;
+  color: #0e566c !important;
+  border: 1px solid #bedfe6;
+}
+
+.my-error-notif {
+  background-color: #fff6f6;
+  color: #973937 !important;
+  border: 1px solid #cb9e9e;
+}
+
+.my-success-notif {
+  background-color: #f3ffd8;
+  color: #0c950e !important;
+  border: 1px solid #a8c599;
+}
+
+.my-warning-notif,
+.my-info-notif,
+.my-error-notif,
+.my-success-notif {
+  // padding-right: 100px;
+  padding-right: 40px;
+  border-radius: 12px !important;
+  // width: 360px !important;
+}
